@@ -1,14 +1,18 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using PhotoAlbum.Models;
-using System.Configuration;
+using System.Net.Http;
+using System.Net.Http.Json;
+using Newtonsoft.Json;
 
 namespace PhotoAlbum.Services
 {
     public interface IThingGetterService
     {
-        Task<IEnumerable<AlbumEntry>> GetAllAlbumEntries();
-        Task<IEnumerable<AlbumEntry>> GetAlbumEntriesByAlbumId(int id);
+        Task<List<AlbumEntry>> GetAllAlbumEntries(string url);
+        Task<List<AlbumEntry>> GetAlbumEntriesByAlbumId(string url, int id);
 
     }
     public class ThingGetterService : IThingGetterService
@@ -19,15 +23,33 @@ namespace PhotoAlbum.Services
         {
             
         }
-        
-        public Task<IEnumerable<AlbumEntry>> GetAllAlbumEntries()
+
+        public async Task<List<AlbumEntry>> GetAllAlbumEntries(string url)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                var response = await new HttpClient().GetFromJsonAsync<List<AlbumEntry>>(url);
+                return response;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("An error ocurred", e);
+                throw;
+            }
         }
 
-        public Task<IEnumerable<AlbumEntry>> GetAlbumEntriesByAlbumId(int id)
+        public async Task<List<AlbumEntry>> GetAlbumEntriesByAlbumId(string url, int id)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                var response = await new HttpClient().GetFromJsonAsync<List<AlbumEntry>>($"{url}?albumId={id}");
+                return response;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("An error ocurred", e);
+                throw;
+            }
         }
     }
 }

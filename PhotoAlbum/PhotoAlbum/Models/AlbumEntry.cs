@@ -9,5 +9,10 @@ namespace PhotoAlbum.Models
         public string title { get; set; }
         public string url { get; set; }
         public string thumbnailUrl { get; set; }
+
+        public override string ToString()
+        {
+            return $"[{this.id}] {this.title}";
+        }
     }
 }
