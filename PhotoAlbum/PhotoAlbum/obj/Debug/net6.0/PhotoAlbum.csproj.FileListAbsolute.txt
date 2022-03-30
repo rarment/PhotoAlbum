@@ -26,3 +26,10 @@
 /Users/rarment/Developer/Personal/PhotoAlbum/PhotoAlbum/PhotoAlbum/bin/Debug/net6.0/appsettings.json
 /Users/rarment/Developer/Personal/PhotoAlbum/PhotoAlbum/PhotoAlbum/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.dll
 /Users/rarment/Developer/Personal/PhotoAlbum/PhotoAlbum/PhotoAlbum/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/rarment/Developer/Personal/PhotoAlbum/PhotoAlbum/PhotoAlbum/bin/Debug/net6.0/Microsoft.Extensions.Configuration.Binder.dll
+/Users/rarment/Developer/Personal/PhotoAlbum/PhotoAlbum/PhotoAlbum/bin/Debug/net6.0/Microsoft.Extensions.Logging.dll
+/Users/rarment/Developer/Personal/PhotoAlbum/PhotoAlbum/PhotoAlbum/bin/Debug/net6.0/Microsoft.Extensions.Logging.Abstractions.dll
+/Users/rarment/Developer/Personal/PhotoAlbum/PhotoAlbum/PhotoAlbum/bin/Debug/net6.0/Microsoft.Extensions.Logging.Configuration.dll
+/Users/rarment/Developer/Personal/PhotoAlbum/PhotoAlbum/PhotoAlbum/bin/Debug/net6.0/Microsoft.Extensions.Logging.Console.dll
+/Users/rarment/Developer/Personal/PhotoAlbum/PhotoAlbum/PhotoAlbum/bin/Debug/net6.0/Microsoft.Extensions.Options.dll
+/Users/rarment/Developer/Personal/PhotoAlbum/PhotoAlbum/PhotoAlbum/bin/Debug/net6.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll

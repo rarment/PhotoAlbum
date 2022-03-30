@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using PhotoAlbum.Models;
 using System.Net.Http;
 using System.Net.Http.Json;
-using Newtonsoft.Json;
 
 namespace PhotoAlbum.Services
 {
@@ -17,8 +16,6 @@ namespace PhotoAlbum.Services
     }
     public class ThingGetterService : IThingGetterService
     {
-        private const string url = "https://jsonplaceholder.typicode.com/photos";
-
         public ThingGetterService()
         {
             
@@ -28,12 +25,13 @@ namespace PhotoAlbum.Services
         {
             try
             {
-                var response = await new HttpClient().GetFromJsonAsync<List<AlbumEntry>>(url);
-                return response;
+                var entries = await new HttpClient().GetFromJsonAsync<List<AlbumEntry>>(url);
+                var groupedEntries = entries.GroupBy(x => x.albumId).Select(y => y.ToList());
+                return entries;
             }
             catch (Exception e)
             {
-                Console.WriteLine("An error ocurred", e);
+                Console.WriteLine("An error occurred", e);
                 throw;
             }
         }
@@ -42,8 +40,8 @@ namespace PhotoAlbum.Services
         {
             try
             {
-                var response = await new HttpClient().GetFromJsonAsync<List<AlbumEntry>>($"{url}?albumId={id}");
-                return response;
+                var entries = await new HttpClient().GetFromJsonAsync<List<AlbumEntry>>($"{url}?albumId={id}");
+                return entries;
             }
             catch (Exception e)
             {

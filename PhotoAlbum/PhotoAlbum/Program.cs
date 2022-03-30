@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using PhotoAlbum.Models;
 using PhotoAlbum.Services;
 
@@ -46,7 +47,7 @@ class Program
                 var albumId = int.Parse(input);
                 entries = thingGetterService
                     .GetAlbumEntriesByAlbumId(_baseUrl, albumId).Result;
-
+                    Console.WriteLine($"Photo Album {input}");
                 foreach (var entry in entries)
                 {
                     Console.WriteLine(entry.ToString());
