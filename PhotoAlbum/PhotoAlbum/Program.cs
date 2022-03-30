@@ -1,5 +1,15 @@
-// See https://aka.ms/new-console-template for more information
+using Microsoft.Extensions.Configuration;
 
-using System;
+class Program
+{
+    static void Main(string[] args)
+    {
+        IConfiguration config = new ConfigurationBuilder()
+            .AddJsonFile("appsettings.json")
+            .Build();
 
-Console.WriteLine("Hello, World!");
+        var url = config.GetSection("PhotoAlbumServiceUrl").Value;
+
+
+    }
+}
