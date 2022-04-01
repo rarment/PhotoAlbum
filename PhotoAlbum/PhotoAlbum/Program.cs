@@ -1,30 +1,25 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Hosting;
+using Serilog;
+using Serilog.Events;
 using PhotoAlbum.Models;
+using PhotoAlbum.Repos;
 using PhotoAlbum.Services;
 
 class Program
 {
-    private static string _baseUrl = "";
-    
-    static void Main(string[] args)
+
+    static async Task Main(string[] args)
     {
+        var host = CreateHost();
 
-        IConfiguration config = new ConfigurationBuilder()
-            .AddJsonFile("appsettings.json")
-            .Build();
-
-        _baseUrl = config.GetSection("PhotoAlbumServiceUrl").Value;
-        var services = new ServiceCollection();
-        services
-            .AddTransient<IThingGetterService, ThingGetterService>();
-
-        IServiceProvider serviceProvider = services.BuildServiceProvider();
-        var thingGetterService = serviceProvider.GetService<IThingGetterService>();
-        var entries = new List<AlbumEntry>();
+        var service = host.Services.GetRequiredService<IThingGetterService>();
+        
+        var albums = new List<AlbumGroups>();
 
         if (args.Length == 0 || args[0] == "-h")
         {
@@ -33,25 +28,71 @@ class Program
 
             if (string.IsNullOrWhiteSpace(input))
             {
-                entries = thingGetterService.GetAllAlbumEntries(_baseUrl)
-                    .Result;
+                albums = await service.GetAllAlbumEntries();
+            }
 
-                foreach (var entry in entries)
-                {
-                    Console.WriteLine(entry.ToString());
-                }
-
+            var canConvert = int.TryParse(input, out var id);
+            if (canConvert)
+            {
+                albums = await service.GetAlbumEntriesByAlbumId(id);
             }
             else
             {
-                var albumId = int.Parse(input);
-                entries = thingGetterService
-                    .GetAlbumEntriesByAlbumId(_baseUrl, albumId).Result;
-                    Console.WriteLine($"Photo Album {input}");
-                foreach (var entry in entries)
-                {
-                    Console.WriteLine(entry.ToString());
-                }
+                Console.WriteLine("Please enter a valid album id (integer)");
+            }
+            DisplayOutput(albums);
+        }
+    }
+    
+    private static IHost CreateHost()
+    {
+        var host = CreateHostBuilder().Build();
+        ConfigureLogger();
+        return host;
+    }
+
+    private static IHostBuilder CreateHostBuilder()
+    {
+        return Host.CreateDefaultBuilder()
+            .ConfigureServices((hostContext, services) =>
+            {
+                RegisterServices(services, hostContext.Configuration);
+            })
+            .UseSerilog();
+    }
+
+    private static void ConfigureLogger()
+    {
+        var loggerConfig = new LoggerConfiguration()
+            .MinimumLevel.Information()
+            .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+            .Enrich.FromLogContext()
+            .WriteTo.Console();
+
+        Log.Logger = loggerConfig.CreateLogger();
+    }
+
+    private static void RegisterServices(IServiceCollection services, IConfiguration config)
+    {
+        services.AddSingleton<IThingGetterService, ThingGetterService>();
+        services.AddSingleton<IThingGetterRepo, ThingGetterRepo>();
+        services.AddHttpClient<IThingGetterRepo, ThingGetterRepo>();
+
+        var appSettings = new AppSettings();
+
+        config.Bind(appSettings);
+
+        services.AddSingleton(appSettings);
+    }
+
+    private static void DisplayOutput(List<AlbumGroups> albumGroups)
+    {
+        foreach (var album in albumGroups)
+        {
+            Console.WriteLine($"photo-album {album.AlbumId}");
+            foreach (var entries in album.AlbumEntries)
+            {
+                Console.WriteLine(entries.ToString());
             }
         }
     }

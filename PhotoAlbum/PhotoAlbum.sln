@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoAlbum", "PhotoAlbum\PhotoAlbum.csproj", "{F3AB5292-F29A-4F86-82D1-85A39C169B4A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoAlbum.Tests", "..\PhotoAlbum.Tests\PhotoAlbum.Tests.csproj", "{B5EBB575-96E9-4BF8-BD1F-F57C82EA5461}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{F3AB5292-F29A-4F86-82D1-85A39C169B4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3AB5292-F29A-4F86-82D1-85A39C169B4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3AB5292-F29A-4F86-82D1-85A39C169B4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5EBB575-96E9-4BF8-BD1F-F57C82EA5461}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5EBB575-96E9-4BF8-BD1F-F57C82EA5461}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5EBB575-96E9-4BF8-BD1F-F57C82EA5461}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5EBB575-96E9-4BF8-BD1F-F57C82EA5461}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

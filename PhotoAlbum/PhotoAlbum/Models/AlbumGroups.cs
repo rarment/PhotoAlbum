@@ -4,7 +4,7 @@ namespace PhotoAlbum.Models
 {
     public class AlbumGroups
     {
-        public int AlbumIb { get; set; }
+        public int AlbumId { get; set; }
         public List<AlbumEntry> AlbumEntries { get; set; }
     }
 }
