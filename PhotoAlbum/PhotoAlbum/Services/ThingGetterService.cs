@@ -11,9 +11,7 @@ namespace PhotoAlbum.Services
 {
     public interface IThingGetterService
     {
-        Task<List<AlbumGroups>> GetAllAlbumEntries();
-        Task<List<AlbumGroups>> GetAlbumEntriesByAlbumId(int id);
-
+        Task<List<AlbumGroups>> GetAlbums(string albumId);
     }
     public class ThingGetterService : IThingGetterService
     {
@@ -26,10 +24,11 @@ namespace PhotoAlbum.Services
             _appSettings = appSettings;
         }
 
-        public async Task<List<AlbumGroups>> GetAllAlbumEntries()
+        private async Task<List<AlbumGroups>> GetAllAlbumEntries()
         {
             try
             {
+                ValidateServiceUrl();
                 var entries = await _thingGetterRepo.GetAlbumsAsync(_appSettings.PhotoAlbumServiceUrl);
                 var groupedEntries = entries.GroupBy(x => x.albumId,
                     (i, enumerable) => new AlbumGroups { AlbumEntries = enumerable.ToList(), AlbumId = i }).ToList();
@@ -42,11 +41,12 @@ namespace PhotoAlbum.Services
             }
         }
 
-        public async Task<List<AlbumGroups>> GetAlbumEntriesByAlbumId(int id)
+        private async Task<List<AlbumGroups>> GetAlbumEntriesByAlbumId(int id)
         {
             var albumGroup = new List<AlbumGroups>();
             try
             {
+                ValidateServiceUrl();
                 var entries = await _thingGetterRepo.GetAlbumsAsync(_appSettings.PhotoAlbumServiceUrl, id);
                 albumGroup.Add(new AlbumGroups
                 {
@@ -60,6 +60,34 @@ namespace PhotoAlbum.Services
                 Console.WriteLine("An error ocurred", e);
                 throw;
             }
+        }
+        
+        private void ValidateServiceUrl()
+        {
+
+            if (!Uri.IsWellFormedUriString(_appSettings.PhotoAlbumServiceUrl, UriKind.Absolute))
+                throw new ArgumentException("Source URL is not valid", nameof(_appSettings.PhotoAlbumServiceUrl));
+        }
+
+        public async Task<List<AlbumGroups>> GetAlbums(string albumId)
+        {
+            var albums = new List<AlbumGroups>();
+            if (string.IsNullOrWhiteSpace(albumId))
+            {
+                albums = await GetAllAlbumEntries();
+            }
+
+            var canConvert = int.TryParse(albumId, out var id);
+            if (canConvert)
+            {
+                albums = await GetAlbumEntriesByAlbumId(id);
+            }
+            else
+            {
+                Console.WriteLine("Please enter a valid album id (integer)");
+            }
+
+            return albums;
         }
     }
 }

@@ -26,20 +26,8 @@ class Program
             Console.WriteLine("Please enter the album Id you wish to retrieve.  Leave blank to retrieve all");
             var input = Console.ReadLine();
 
-            if (string.IsNullOrWhiteSpace(input))
-            {
-                albums = await service.GetAllAlbumEntries();
-            }
-
-            var canConvert = int.TryParse(input, out var id);
-            if (canConvert)
-            {
-                albums = await service.GetAlbumEntriesByAlbumId(id);
-            }
-            else
-            {
-                Console.WriteLine("Please enter a valid album id (integer)");
-            }
+            albums = await service.GetAlbums(input);
+            
             DisplayOutput(albums);
         }
     }

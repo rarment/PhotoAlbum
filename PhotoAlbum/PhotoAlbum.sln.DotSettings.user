@@ -1,0 +1,13 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a819d523_002D38e5_002D45d2_002Daaeb_002D5ec1233cdae7/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GetAlbums_OkResult_ShouldReturnExpectedData #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::B5EBB575-96E9-4BF8-BD1F-F57C82EA5461::net6.0::PhotoAlbum.Tests.RepoTests.ThingGetterRepoTests.GetAlbums_OkResult_ShouldReturnExpectedData&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::B5EBB575-96E9-4BF8-BD1F-F57C82EA5461::net6.0::PhotoAlbum.Tests.RepoTests.ThingGetterRepoTests.GetAlbums_InvalidUrl_ShouldThrowException&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::B5EBB575-96E9-4BF8-BD1F-F57C82EA5461::net6.0::PhotoAlbum.Tests.ThingGetterServiceTests.GetAllAlbumEntries_ValidData_ShouldReturnExpectedData&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=dc6be413_002De96a_002D498d_002D8a30_002Dfb19334aec83/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetAlbums_OkResult_ShouldReturnExpectedData" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::B5EBB575-96E9-4BF8-BD1F-F57C82EA5461::net6.0::PhotoAlbum.Tests.RepoTests.ThingGetterRepoTests.GetAlbums_OkResult_ShouldReturnExpectedData&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
