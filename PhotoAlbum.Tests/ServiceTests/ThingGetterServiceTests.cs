@@ -19,6 +19,7 @@ namespace PhotoAlbum.Tests
         private readonly Faker _faker;
         private readonly List<AlbumEntry> _testData;
         private readonly List<AlbumGroups> _albumGroups;
+        private readonly int _albumId;
 
         public ThingGetterServiceTests()
         {
@@ -32,32 +33,32 @@ namespace PhotoAlbum.Tests
             };
             
             _url = _faker.Internet.Url();
-            var albumId = _faker.Random.Int();
+            _albumId = _faker.Random.Int();
             var fakeAlbumEntry = new Faker<AlbumEntry>()
                 .RuleFor(c => c.id, _faker.Random.Int())
-                .RuleFor(c => c.albumId, albumId)
+                .RuleFor(c => c.albumId, _albumId)
                 .RuleFor(c => c.title, _faker.Random.String2(25))
                 .RuleFor(c => c.url, _faker.Internet.Url())
                 .RuleFor(c => c.thumbnailUrl, _faker.Internet.Url());
             _testData.AddRange(fakeAlbumEntry.Generate(_faker.Random.Int(1, 500)));
             var tester = new AlbumGroups()
             {
-                AlbumId = albumId,
+                AlbumId = _albumId,
                 AlbumEntries = _testData
             };
             _albumGroups.Add(tester);
 
             _thingGetterRepoMock = new Mock<IThingGetterRepo>();
-            _thingGetterRepoMock.Setup(x => x.GetAlbumsAsync(_url, albumId)).ReturnsAsync(_testData);
+            _thingGetterRepoMock.Setup(x => x.GetAlbumsAsync(_url, _albumId)).ReturnsAsync(_testData);
 
             _thingGetterService = new ThingGetterService(_thingGetterRepoMock.Object, _appSettings);
 
         }
 
         [Fact]
-        public async Task GetAllAlbumEntries_ValidData_ShouldReturnExpectedData()
+        public async Task GetAlbums_ValidData_ShouldReturnExpectedDataForSpecificAlbumId()
         {
-            var result = await _thingGetterService.GetAlbums("");
+            var result = await _thingGetterService.GetAlbumsAsync(_albumId.ToString());
 
             result.Should().BeEquivalentTo(_albumGroups);
         }

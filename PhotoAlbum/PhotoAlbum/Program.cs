@@ -26,7 +26,7 @@ class Program
             Console.WriteLine("Please enter the album Id you wish to retrieve.  Leave blank to retrieve all");
             var input = Console.ReadLine();
 
-            albums = await service.GetAlbums(input);
+            albums = await service.GetAlbumsAsync(input);
             
             DisplayOutput(albums);
         }

@@ -4,6 +4,7 @@
     &lt;TestId&gt;xUnit::B5EBB575-96E9-4BF8-BD1F-F57C82EA5461::net6.0::PhotoAlbum.Tests.RepoTests.ThingGetterRepoTests.GetAlbums_OkResult_ShouldReturnExpectedData&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::B5EBB575-96E9-4BF8-BD1F-F57C82EA5461::net6.0::PhotoAlbum.Tests.RepoTests.ThingGetterRepoTests.GetAlbums_InvalidUrl_ShouldThrowException&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::B5EBB575-96E9-4BF8-BD1F-F57C82EA5461::net6.0::PhotoAlbum.Tests.ThingGetterServiceTests.GetAllAlbumEntries_ValidData_ShouldReturnExpectedData&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::B5EBB575-96E9-4BF8-BD1F-F57C82EA5461::net6.0::PhotoAlbum.Tests.ThingGetterServiceTests.GetAlbums_ValidData_ShouldReturnExpectedDataForSpecificAlbumId&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=dc6be413_002De96a_002D498d_002D8a30_002Dfb19334aec83/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetAlbums_OkResult_ShouldReturnExpectedData" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;

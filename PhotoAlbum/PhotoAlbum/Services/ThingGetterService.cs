@@ -11,7 +11,7 @@ namespace PhotoAlbum.Services
 {
     public interface IThingGetterService
     {
-        Task<List<AlbumGroups>> GetAlbums(string albumId);
+        Task<List<AlbumGroups>> GetAlbumsAsync(string albumId);
     }
     public class ThingGetterService : IThingGetterService
     {
@@ -57,19 +57,18 @@ namespace PhotoAlbum.Services
             }
             catch (Exception e)
             {
-                Console.WriteLine("An error ocurred", e);
+                Console.WriteLine("An error occurred", e);
                 throw;
             }
         }
         
         private void ValidateServiceUrl()
         {
-
             if (!Uri.IsWellFormedUriString(_appSettings.PhotoAlbumServiceUrl, UriKind.Absolute))
                 throw new ArgumentException("Source URL is not valid", nameof(_appSettings.PhotoAlbumServiceUrl));
         }
 
-        public async Task<List<AlbumGroups>> GetAlbums(string albumId)
+        public async Task<List<AlbumGroups>> GetAlbumsAsync(string albumId)
         {
             var albums = new List<AlbumGroups>();
             if (string.IsNullOrWhiteSpace(albumId))
@@ -77,14 +76,14 @@ namespace PhotoAlbum.Services
                 albums = await GetAllAlbumEntries();
             }
 
-            var canConvert = int.TryParse(albumId, out var id);
-            if (canConvert)
+            if (int.TryParse(albumId, out var id))
             {
                 albums = await GetAlbumEntriesByAlbumId(id);
             }
             else
             {
                 Console.WriteLine("Please enter a valid album id (integer)");
+                
             }
 
             return albums;

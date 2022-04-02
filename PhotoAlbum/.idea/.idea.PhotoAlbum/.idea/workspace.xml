@@ -15,7 +15,10 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/BDD6787E-F9D8-4182-85A1-BBA141319B97/9/CallSiteFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/CA1F4E14-BE08-45FB-96A1-382104E46060/BA/Number.Formatting.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/CA1F4E14-BE08-45FB-96A1-382104E46060/41/RuntimeType.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377B61B6-13EA-444F-826F-377D9474FFCA/46/af0c849f/ExecutionTimer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CBE14634-2FBF-4ADF-8E48-C5AA831AFFF4/29/c16c38dc/Uri.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/CA1F4E14-BE08-45FB-96A1-382104E46060/253/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -27,9 +30,9 @@
       <option value="$PROJECT_DIR$/PhotoAlbum/Models/AppSettings.cs" />
       <option value="$PROJECT_DIR$/PhotoAlbum/Repos/ThingGetterRepo.cs" />
       <option value="$PROJECT_DIR$/../PhotoAlbum.Tests/RepoTests/ThingGetterRepoTests.cs" />
-      <option value="$PROJECT_DIR$/../PhotoAlbum.Tests/ServiceTests/ThingGetterServiceTests.cs" />
-      <option value="$PROJECT_DIR$/PhotoAlbum/Services/ThingGetterService.cs" />
       <option value="$PROJECT_DIR$/PhotoAlbum/Program.cs" />
+      <option value="$PROJECT_DIR$/PhotoAlbum/Services/ThingGetterService.cs" />
+      <option value="$PROJECT_DIR$/../PhotoAlbum.Tests/ServiceTests/ThingGetterServiceTests.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="274c1In3KFEcah37wD2U2ojj8sX" />
@@ -76,7 +79,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1648582582246</updated>
-      <workItem from="1648582597385" duration="24549000" />
+      <workItem from="1648582597385" duration="27216000" />
     </task>
     <servers />
   </component>
@@ -105,27 +108,14 @@
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/../PhotoAlbum.Tests/ServiceTests/ThingGetterServiceTests.cs</url>
-          <line>59</line>
-          <properties documentPath="$PROJECT_DIR$/../PhotoAlbum.Tests/ServiceTests/ThingGetterServiceTests.cs" initialLine="51" containingFunctionPresentation="method 'GetAllAlbumEntries_ValidData_ShouldReturnExpectedData'">
-            <startOffsets>
-              <option value="2148" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2208" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/PhotoAlbum/Services/ThingGetterService.cs</url>
           <line>30</line>
           <properties documentPath="$PROJECT_DIR$/PhotoAlbum/Services/ThingGetterService.cs" initialLine="32" containingFunctionPresentation="method 'GetAllAlbumEntries'">
             <startOffsets>
-              <option value="851" />
+              <option value="856" />
             </startOffsets>
             <endOffsets>
-              <option value="872" />
+              <option value="877" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="15" />
@@ -142,6 +132,32 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/PhotoAlbum/Services/ThingGetterService.cs</url>
+          <line>72</line>
+          <properties documentPath="$PROJECT_DIR$/PhotoAlbum/Services/ThingGetterService.cs" initialLine="73" containingFunctionPresentation="method 'GetAlbumsAsync'">
+            <startOffsets>
+              <option value="2438" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2475" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/PhotoAlbum/Services/ThingGetterService.cs</url>
+          <line>49</line>
+          <properties documentPath="$PROJECT_DIR$/PhotoAlbum/Services/ThingGetterService.cs" initialLine="49" containingFunctionPresentation="method 'GetAlbumEntriesByAlbumId'">
+            <startOffsets>
+              <option value="1602" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1693" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
