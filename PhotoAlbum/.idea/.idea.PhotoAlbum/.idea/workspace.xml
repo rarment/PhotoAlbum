@@ -79,7 +79,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1648582582246</updated>
-      <workItem from="1648582597385" duration="27216000" />
+      <workItem from="1648582597385" duration="33524000" />
     </task>
     <servers />
   </component>
@@ -108,19 +108,6 @@
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PhotoAlbum/Services/ThingGetterService.cs</url>
-          <line>30</line>
-          <properties documentPath="$PROJECT_DIR$/PhotoAlbum/Services/ThingGetterService.cs" initialLine="32" containingFunctionPresentation="method 'GetAllAlbumEntries'">
-            <startOffsets>
-              <option value="856" />
-            </startOffsets>
-            <endOffsets>
-              <option value="877" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/PhotoAlbum/Repos/ThingGetterRepo.cs</url>
           <line>22</line>
           <properties documentPath="$PROJECT_DIR$/PhotoAlbum/Repos/ThingGetterRepo.cs" initialLine="22" containingFunctionPresentation="method 'GetAlbumsAsync'">
@@ -134,30 +121,17 @@
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PhotoAlbum/Services/ThingGetterService.cs</url>
-          <line>72</line>
-          <properties documentPath="$PROJECT_DIR$/PhotoAlbum/Services/ThingGetterService.cs" initialLine="73" containingFunctionPresentation="method 'GetAlbumsAsync'">
+          <url>file://$PROJECT_DIR$/../PhotoAlbum.Tests/ServiceTests/ThingGetterServiceTests.cs</url>
+          <line>76</line>
+          <properties documentPath="$PROJECT_DIR$/../PhotoAlbum.Tests/ServiceTests/ThingGetterServiceTests.cs" initialLine="83" containingFunctionPresentation="method 'GetAlbums_ValidData_ShouldReturnExpectedDataForAllAlbums'">
             <startOffsets>
-              <option value="2438" />
+              <option value="2728" />
             </startOffsets>
             <endOffsets>
-              <option value="2475" />
+              <option value="2804" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PhotoAlbum/Services/ThingGetterService.cs</url>
-          <line>49</line>
-          <properties documentPath="$PROJECT_DIR$/PhotoAlbum/Services/ThingGetterService.cs" initialLine="49" containingFunctionPresentation="method 'GetAlbumEntriesByAlbumId'">
-            <startOffsets>
-              <option value="1602" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1693" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="19" />
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
