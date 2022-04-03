@@ -23,7 +23,6 @@ namespace PhotoAlbum.Tests
         private readonly List<AlbumGroups> _albumGroups;
         private readonly int _albumId;
         private readonly int _albumId2;
-        private AlbumGroups? _albumGroup2;
         private readonly Faker<AlbumEntry> _fakeAlbumEntry;
 
         public ThingGetterServiceTests()
@@ -32,6 +31,7 @@ namespace PhotoAlbum.Tests
             _testData = new List<AlbumEntry>();
             _testData2 = new List<AlbumEntry>();
             _albumGroups = new List<AlbumGroups>();
+            _fakeAlbumEntry = new Faker<AlbumEntry>();
             _url = _faker.Internet.Url();
             _appSettings = new AppSettings()
             {
@@ -40,12 +40,6 @@ namespace PhotoAlbum.Tests
             
             _albumId = _faker.Random.Int();
             _albumId2 = _faker.Random.Int();
-            _fakeAlbumEntry = new Faker<AlbumEntry>()
-                .RuleFor(c => c.id, _faker.Random.Int())
-                .RuleFor(c => c.albumId, _albumId)
-                .RuleFor(c => c.title, _faker.Random.String2(25))
-                .RuleFor(c => c.url, _faker.Internet.Url())
-                .RuleFor(c => c.thumbnailUrl, _faker.Internet.Url());
 
             _thingGetterRepoMock = new Mock<IThingGetterRepo>();
 
@@ -131,7 +125,7 @@ namespace PhotoAlbum.Tests
 
         private List<AlbumEntry> GenerateFakeAlbums(int count, int albumId)
         {
-            var response = new Faker<AlbumEntry>()
+            var response = _fakeAlbumEntry
                 .RuleFor(c => c.id, _faker.Random.Int())
                 .RuleFor(c => c.albumId, albumId)
                 .RuleFor(c => c.title, _faker.Random.String2(25))
