@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using PhotoAlbum.Models;
-using System.Net.Http;
-using System.Net.Http.Json;
 using PhotoAlbum.Repos;
 using Serilog;
 
