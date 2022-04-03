@@ -24,7 +24,6 @@
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/PhotoAlbum/appsettings.json" />
-      <option value="$PROJECT_DIR$/PhotoAlbum/Models/AlbumEntry.cs" />
       <option value="$PROJECT_DIR$/../PhotoAlbum.Tests/ThingGetterServiceTests.cs" />
       <option value="$PROJECT_DIR$/PhotoAlbum/Models/AlbumGroups.cs" />
       <option value="$PROJECT_DIR$/PhotoAlbum/Models/AppSettings.cs" />
@@ -32,7 +31,9 @@
       <option value="$PROJECT_DIR$/../PhotoAlbum.Tests/RepoTests/ThingGetterRepoTests.cs" />
       <option value="$PROJECT_DIR$/PhotoAlbum/Program.cs" />
       <option value="$PROJECT_DIR$/PhotoAlbum/Services/ThingGetterService.cs" />
+      <option value="$PROJECT_DIR$/PhotoAlbum/Models/AlbumEntry.cs" />
       <option value="$PROJECT_DIR$/../PhotoAlbum.Tests/ServiceTests/ThingGetterServiceTests.cs" />
+      <option value="$PROJECT_DIR$/PhotoAlbum/README.md" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="274c1In3KFEcah37wD2U2ojj8sX" />
@@ -79,7 +80,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1648582582246</updated>
-      <workItem from="1648582597385" duration="33524000" />
+      <workItem from="1648582597385" duration="34818000" />
     </task>
     <servers />
   </component>
@@ -106,32 +107,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PhotoAlbum/Repos/ThingGetterRepo.cs</url>
-          <line>22</line>
-          <properties documentPath="$PROJECT_DIR$/PhotoAlbum/Repos/ThingGetterRepo.cs" initialLine="22" containingFunctionPresentation="method 'GetAlbumsAsync'">
-            <startOffsets>
-              <option value="602" />
-            </startOffsets>
-            <endOffsets>
-              <option value="647" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/../PhotoAlbum.Tests/ServiceTests/ThingGetterServiceTests.cs</url>
-          <line>76</line>
-          <properties documentPath="$PROJECT_DIR$/../PhotoAlbum.Tests/ServiceTests/ThingGetterServiceTests.cs" initialLine="83" containingFunctionPresentation="method 'GetAlbums_ValidData_ShouldReturnExpectedDataForAllAlbums'">
-            <startOffsets>
-              <option value="2728" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2804" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

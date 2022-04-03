@@ -12,7 +12,7 @@ namespace PhotoAlbum.Models
 
         public override string ToString()
         {
-            return $"[{this.id}] {this.title}";
+            return $"[{id}] {title}";
         }
     }
 }

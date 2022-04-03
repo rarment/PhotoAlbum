@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Bogus;
@@ -98,6 +99,34 @@ namespace PhotoAlbum.Tests
             var result = await _thingGetterService.GetAlbumsAsync("");
 
             result.Should().BeEquivalentTo(albumGroupList);
+        }
+
+        [Fact]
+        public async Task GetAlbums_InputStringInsteadOfNumber_ShouldNotReturnAnything()
+        {
+            var result = await _thingGetterService.GetAlbumsAsync(_faker.Random.String2(25));
+
+            result.Should().BeEmpty();
+        }
+
+        [Fact]
+        public async Task GetAlbums_RepoException_ShouldThrowException()
+        {
+            _thingGetterRepoMock.Setup(x => x.GetAlbumsAsync(It.IsAny<string>(), It.IsAny<int>())).ThrowsAsync(new Exception());
+
+            Func<Task> func = async () => await _thingGetterService.GetAlbumsAsync(It.IsAny<string>());
+
+            await func.Should().ThrowAsync<Exception>();
+        }
+        
+        [Fact]
+        public async Task GetTopWords_InvalidUrl_ShouldThrowArgumentException()
+        {
+            _appSettings.PhotoAlbumServiceUrl = _faker.Random.String2(10);
+
+            Func<Task> func = async () => await _thingGetterService.GetAlbumsAsync(It.IsAny<string>());
+
+            await func.Should().ThrowAsync<ArgumentException>();
         }
 
         private List<AlbumEntry> GenerateFakeAlbums(int count, int albumId)
