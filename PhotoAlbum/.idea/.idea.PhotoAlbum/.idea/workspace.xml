@@ -29,11 +29,11 @@
       <option value="$PROJECT_DIR$/PhotoAlbum/Models/AppSettings.cs" />
       <option value="$PROJECT_DIR$/PhotoAlbum/Repos/ThingGetterRepo.cs" />
       <option value="$PROJECT_DIR$/PhotoAlbum/Models/AlbumEntry.cs" />
-      <option value="$PROJECT_DIR$/PhotoAlbum/README.md" />
       <option value="$PROJECT_DIR$/../PhotoAlbum.Tests/ServiceTests/ThingGetterServiceTests.cs" />
       <option value="$PROJECT_DIR$/../PhotoAlbum.Tests/RepoTests/ThingGetterRepoTests.cs" />
       <option value="$PROJECT_DIR$/PhotoAlbum/Program.cs" />
       <option value="$PROJECT_DIR$/PhotoAlbum/Services/ThingGetterService.cs" />
+      <option value="$PROJECT_DIR$/PhotoAlbum/README.md" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="274c1In3KFEcah37wD2U2ojj8sX" />
@@ -80,7 +80,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1648582582246</updated>
-      <workItem from="1648582597385" duration="38333000" />
+      <workItem from="1648582597385" duration="38645000" />
     </task>
     <servers />
   </component>
