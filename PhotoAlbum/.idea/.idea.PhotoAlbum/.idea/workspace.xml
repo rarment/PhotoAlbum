@@ -28,12 +28,12 @@
       <option value="$PROJECT_DIR$/PhotoAlbum/Models/AlbumGroups.cs" />
       <option value="$PROJECT_DIR$/PhotoAlbum/Models/AppSettings.cs" />
       <option value="$PROJECT_DIR$/PhotoAlbum/Repos/ThingGetterRepo.cs" />
-      <option value="$PROJECT_DIR$/../PhotoAlbum.Tests/RepoTests/ThingGetterRepoTests.cs" />
-      <option value="$PROJECT_DIR$/PhotoAlbum/Program.cs" />
-      <option value="$PROJECT_DIR$/PhotoAlbum/Services/ThingGetterService.cs" />
       <option value="$PROJECT_DIR$/PhotoAlbum/Models/AlbumEntry.cs" />
       <option value="$PROJECT_DIR$/PhotoAlbum/README.md" />
       <option value="$PROJECT_DIR$/../PhotoAlbum.Tests/ServiceTests/ThingGetterServiceTests.cs" />
+      <option value="$PROJECT_DIR$/../PhotoAlbum.Tests/RepoTests/ThingGetterRepoTests.cs" />
+      <option value="$PROJECT_DIR$/PhotoAlbum/Program.cs" />
+      <option value="$PROJECT_DIR$/PhotoAlbum/Services/ThingGetterService.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="274c1In3KFEcah37wD2U2ojj8sX" />
@@ -80,7 +80,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1648582582246</updated>
-      <workItem from="1648582597385" duration="36416000" />
+      <workItem from="1648582597385" duration="38333000" />
     </task>
     <servers />
   </component>
@@ -91,24 +91,5 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/../PhotoAlbum.Tests/RepoTests/ThingGetterRepoTests.cs</url>
-          <line>31</line>
-          <properties documentPath="$PROJECT_DIR$/../PhotoAlbum.Tests/RepoTests/ThingGetterRepoTests.cs" initialLine="30" containingFunctionPresentation="constructor 'ThingGetterRepoTests'">
-            <startOffsets>
-              <option value="851" />
-            </startOffsets>
-            <endOffsets>
-              <option value="855" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

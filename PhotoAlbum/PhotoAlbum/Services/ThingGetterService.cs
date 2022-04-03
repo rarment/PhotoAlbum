@@ -6,6 +6,7 @@ using PhotoAlbum.Models;
 using System.Net.Http;
 using System.Net.Http.Json;
 using PhotoAlbum.Repos;
+using Serilog;
 
 namespace PhotoAlbum.Services
 {
@@ -32,11 +33,13 @@ namespace PhotoAlbum.Services
                 var entries = await _thingGetterRepo.GetAlbumsAsync(_appSettings.PhotoAlbumServiceUrl);
                 var groupedEntries = entries.GroupBy(x => x.albumId,
                     (i, enumerable) => new AlbumGroups { AlbumEntries = enumerable.ToList(), AlbumId = i }).ToList();
+                Log.Information("GetAllAlbumEntries - Success");
                 return groupedEntries;
             }
             catch (Exception e)
             {
                 Console.WriteLine("An error occurred", e);
+                Log.Error("GetAllAlbumEntries - Error occurred getting album entries", e);
                 throw;
             }
         }
@@ -53,11 +56,13 @@ namespace PhotoAlbum.Services
                     AlbumId = id,
                     AlbumEntries = entries
                 });
+                Log.Information("GetAlbumEntriesByAlbumId - Success");
                 return albumGroup;
             }
             catch (Exception e)
             {
                 Console.WriteLine("An error occurred", e);
+                Log.Error("GetAlbumEntriesByAlbumId - Error getting album entries", e);
                 throw;
             }
         }
@@ -83,7 +88,6 @@ namespace PhotoAlbum.Services
             else
             {
                 Console.WriteLine("Please enter a valid album id (integer)");
-                
             }
 
             return albums;

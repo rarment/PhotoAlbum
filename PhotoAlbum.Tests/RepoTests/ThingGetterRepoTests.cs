@@ -27,7 +27,6 @@ namespace PhotoAlbum.Tests.RepoTests
         {
             _faker = new Faker();
             _testData = new List<AlbumEntry>();
-            
             _url = _faker.Internet.Url();
             var fakeAlbumEntry = new Faker<AlbumEntry>()
                 .RuleFor(c => c.id, _faker.Random.Int())
